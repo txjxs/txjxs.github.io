@@ -1,3 +1,18 @@
+/* Theme Variables */
+:root {
+    --background-color: #f9f9f9;
+    --text-color: #333;
+    --accent-color: #00bcd4;
+    --icon-color: #333;
+}
+
+[data-theme="dark"] {
+    --background-color: #121212;
+    --text-color: #f0f0f0;
+    --accent-color: #bb86fc;
+    --icon-color: #f0f0f0;
+}
+
 /* Reset */
 * {
     margin: 0;
@@ -7,115 +22,128 @@
 
 /* Body Styling */
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Navbar */
-nav {
+/* Header Styling */
+.header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding: 1rem 2rem;
-    background: #333;
-    color: #fff;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
 }
 
-.nav-links {
-    list-style: none;
+.name {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+.keywords {
     display: flex;
+    gap: 2rem;
 }
 
-.nav-links li {
-    margin-left: 1.5rem;
+.keyword {
+    font-size: 1rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-.nav-links a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
+.keyword:hover {
+    color: var(--accent-color);
 }
 
-.nav-links a:hover {
-    color: #00bcd4;
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--icon-color);
+    transition: color 0.3s ease;
+}
+
+.theme-toggle::before {
+    content: '🌙'; /* Moon icon for light mode */
+    font-size: 1.5rem;
+}
+
+[data-theme="dark"] .theme-toggle::before {
+    content: '☀️'; /* Sun icon for dark mode */
 }
 
 /* Hero Section */
 .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
     text-align: center;
-    padding: 3rem 1.5rem;
-    background: linear-gradient(to right, #00bcd4, #5c6bc0);
-    color: #fff;
-    animation: fadeIn 1s ease-in-out;
 }
 
-.hero h1 span {
-    color: #ffeb3b;
+.hero h1 {
+    font-size: 2.5rem;
+    color: var(--accent-color);
 }
 
-.cta-button {
-    margin-top: 1.5rem;
-    padding: 0.75rem 1.5rem;
-    background: #ffeb3b;
-    color: #333;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background 0.3s;
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-color);
 }
 
-.cta-button:hover {
-    background: #fdd835;
+/* Mini-list Design */
+.mini-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-/* Content Sections */
+.mini-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--accent-color);
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.mini-list li:hover {
+    color: var(--accent-color);
+}
+
+/* Content Section Styling */
 .content-section {
-    padding: 3rem 2rem;
-    max-width: 800px;
-    margin: auto;
-    text-align: center;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.content-section h2 {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.content-section p {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.5;
 }
 
 .project-card {
-    margin: 1rem 0;
-    padding: 1.5rem;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    margin-bottom: 1.5rem;
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
+.project-card h3 {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
 }
 
-/* Keyframes */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+.project-card p {
+    font-size: 1rem;
+    color: var(--text-color);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-
-    nav {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .hero {
-        padding: 2rem;
-    }
-
-    .project-card {
-        margin: 1rem;
-    }
-}
