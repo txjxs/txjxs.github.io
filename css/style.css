@@ -201,3 +201,20 @@ section {
         align-items: center;
     }
 }
+/* Resume Button */
+.resume-button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.5rem;
+    background-color: #333;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.resume-button:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+}
