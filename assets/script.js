@@ -1,19 +1,12 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Select theme toggle button
-    const themeToggle = document.getElementById('theme-toggle');
+function toggleTheme() {
+    const body = document.body;
+    const themeIcon = document.getElementById('theme-icon');
 
-    // Check for saved theme in local storage
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', currentTheme);
-
-    // Set initial theme icon
-    themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
-
-    // Toggle theme on button click
-    themeToggle.addEventListener('click', () => {
-        const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
-    });
-});
+    if (body.classList.contains('light-theme')) {
+        body.classList.replace('light-theme', 'dark-theme');
+        themeIcon.src = 'assets/moon.svg';
+    } else {
+        body.classList.replace('dark-theme', 'light-theme');
+        themeIcon.src = 'assets/sun.svg';
+    }
+}

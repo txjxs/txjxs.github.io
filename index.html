@@ -3,57 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tejas Nisar | Data Analyst</title>
+    <title>Tejas Nisar Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <!-- Hero Section with Keywords -->
-
-     <!-- Header with Keywords as Nav -->
-     <header class="header">
-        <span class="name">Tejas Nisar</span>
-        <nav class="keywords">
-            <span class="keyword">Discover</span>
-            <span class="keyword">Assess</span>
-            <span class="keyword">Communicate</span>
-        </nav>
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark/Light Mode">
-            <!-- Icon updates based on theme in CSS -->
-        </button>
-    </header>
-
-    
-    <section class="hero">
+<body class="light-theme">
+    <!-- Navbar -->
+    <nav class="navbar">
         <h1>Tejas Nisar</h1>
-        <p>Aspiring Data Analyst dedicated to extracting actionable insights from data. Leveraging statistical analysis and visualization tools to empower informed decision-making. Transforming raw data into strategic guidance for organizational success.</p>
-
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="content-section">
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#work">My Work</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+            <li><button id="theme-toggle" onclick="toggleTheme()">
+                <img src="assets/sun.svg" alt="Toggle theme icon" id="theme-icon">
+            </button></li>
+        </ul>
+    </nav>
+    
+    <!-- Sections -->
+    <section id="about">
         <h2>About Me</h2>
-        <p>I’m a data analyst focused on uncovering insights that drive strategic decisions. With a blend of technical and analytical skills, I turn data into impactful guidance for success.</p>
+        <!-- Content goes here -->
     </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="content-section">
-        <h2>Projects</h2>
-        <div class="project-card">
-            <h3>Insect Classification Model</h3>
-            <p>Achieved 89% accuracy in classifying insect species using Python and AWS.</p>
-        </div>
-        <div class="project-card">
-            <h3>University Finder</h3>
-            <p>A tool to help international students find suitable universities based on living costs, crime rates, and more.</p>
-        </div>
+    <section id="work">
+        <h2>My Work</h2>
+        <!-- Content goes here -->
     </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="content-section">
+    <section id="contact">
         <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:tejasnisar@example.com">tejasnisar@example.com</a></p>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/tejasnisar" target="_blank" aria-label="LinkedIn">
+                <img src="assets/linkedin.svg" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/txjxs" target="_blank" aria-label="GitHub">
+                <img src="assets/github.svg" alt="GitHub">
+            </a>
+            <a href="mailto:tejas.dilip.nisar@gmail.com" aria-label="Email">
+                <img src="assets/mail.svg" alt="Email">
+            </a>
+        </div>
     </section>
+    
 
-    <script src="assets/script.js" defer></script>
+    <script src="assets/script.js"></script>
 </body>
 </html>
